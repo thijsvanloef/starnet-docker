@@ -4,7 +4,10 @@ USER root
 
 RUN apt-get update && apt-get install -y \
     wget \
-    unzip
+    unzip \
+    && apt-get clean autoclean  \
+    && apt-get autoremove -y \
+    && rm -rf /var/lib/apt/lists/*
 
 RUN useradd -ms /bin/bash starnet
 USER starnet
