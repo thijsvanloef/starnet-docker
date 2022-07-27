@@ -15,6 +15,3 @@ COPY scripts/* .
 RUN mkdir /home/starnet/application/input /home/starnet/application/output 
 
 ENTRYPOINT [ "./start.sh" ]
-
-
-
