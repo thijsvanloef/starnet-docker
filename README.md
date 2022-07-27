@@ -2,7 +2,8 @@
 
 A containerized variant of the [Starnet++](https://www.starnetastro.com/) application
 
-I've made this image to be able to use Starnet++ quickly without needing to install the application locally.
+I've made this image to be able to use Starnet++ quickly without needing to install the application locally.+
+
 Please note, I'm not the creator of starnet++ for support go to [the Starnet++ website](https://www.starnetastro.com/)
 
 ## How to use
@@ -17,9 +18,8 @@ After creating the folders you can use this image using Docker run.
 ### docker run
 
 ```bash
-
 docker run \
     -v /path/to/input:/home/starnet/application/input \
     -v /path/to/output:/home/starnet/application/output \ 
-    thijsvanloef/starnet:latest
+    thijsvanloef/starnet-docker:latest
 ```
