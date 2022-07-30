@@ -15,19 +15,19 @@ Please note, I'm not the creator of starnet++ for support go to [the Starnet++ w
 
 ## Why Docker
 
-Docker allows you to use Starnet++ without installing it. All the files and dependancies you need are already present in the container and will not require installation.
+Docker allows you to use Starnet++ without installing it. All the files and dependencies you need are already in the container and will not require installation.
 
 ## Batch processing
 
 This Docker container also allows batch processing of images, meaning if you put multiple files in the input folder, it will sequentially process your .TIFF files.
 
-There is also the option of running the process in parallel, which means that it will try to process all the images at the same time, this might result into heavy CPU/GPU usage.
+There is also the option of running the process in parallel, which means it will try to process all the images simultaneously. Running in parallel might result in heavy CPU/GPU usage.
 
 ### Sequentially
 
-By default the images will be processed sequentually, meaning it will process and image and move on the the next one if the processing of that image is done.
+By default, the images will be processed sequentially, meaning it will process an image and move on to the next one if the processing of that image is done.
 
-This will result in less CPU usage but the CPU usage will heavily fluctuate and can take a longer time to process if you are batch processing images.
+This will result in less CPU usage, but the CPU usage will heavily fluctuate and can take longer to process if you batch-process images.
 
 #### Sequentual Test results
 
@@ -38,6 +38,7 @@ Limited testing was performed during the development of the image.
 - Samples per pixel: 3
 - Height: 712
 - Width: 1048
+- Stride: 128
 
 Results:
 
@@ -47,9 +48,9 @@ Results:
 
 ### Parallel
 
-By default the images will be processed sequentually, but you have the option to process the images in parallel meaning that the container will try to process all image at once.
+By default, the images will be processed sequentially, but you have the option to process the images in parallel, meaning that the container will try to process all images at once.
 
-This will result in more sustained CPU usage, but will take less time for it to process all files.
+This will result in more sustained CPU usage but will take less time for it to process all files.
 
 #### Parallel Test results
 
@@ -60,6 +61,7 @@ Limited testing was performed during the development of the image.
 - Samples per pixel: 3
 - Height: 712
 - Width: 1048
+- Stride: 128
 
 Results:
 
@@ -74,7 +76,7 @@ First create 2 folders:
 - **input**: an "input" folder in which you have the `.tif` files you wish to use.
 - **output**: an "output" folder which the processed `.tif` files will be output.
 
-After creating the folders you can use this image using Docker run.
+After creating the folders, you can use this image using Docker run.
 
 ### docker run
 
@@ -92,4 +94,4 @@ docker run \
 | Option      | Description | Default Value |
 | ----------- | ----------- | ----------- |
 | PARALLEL      | Run the processing in parallel or not. It will run sequentially by default.       | false       |
-| STRIDE   | The stride setting controls how it computes the starless image. It computes a single block of pixels at a time, and then repeats until it has finished the image. With a large setting, it works on fewer larger blocks of pixels. A smaller setting, it works on more blocks of fewer pixels. A large setting can produce blocky results on large stars. On the other hand, a small setting will take WAY more computer time, so it is a tradeoff.        | 128        |
+| STRIDE   | The stride setting controls how it computes the starless image. It computes a single block of pixels at a time and then repeats until it has finished the image. With a large setting, it works on fewer larger blocks of pixels. In a smaller setting, it works on more blocks of fewer pixels. A large setting can produce blocky results on large stars. On the other hand, a small setting will take WAY more computer time, so it is a tradeoff.       | 128        |
