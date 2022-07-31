@@ -7,11 +7,11 @@
 
 [View on Docker Hub](https://hub.docker.com/repository/docker/thijsvanloef/starnet-docker)
 
-A containerized variant of the [Starnet++](https://www.starnetastro.com/) application
+A containerized variant of the [Starnet++](https://www.starnetastro.com/) application.
 
-I've made this image to be able to use Starnet++ quickly without needing to install the application locally.+
+I've made this image to be able to use Starnet++ quickly without needing to install the application locally.
 
-Please note, I'm not the creator of starnet++ for support go to [the Starnet++ website](https://www.starnetastro.com/)
+Please note, I'm not the creator of starnet++ for support go to [the Starnet++ website](https://www.starnetastro.com/).
 
 ## Why Docker
 
