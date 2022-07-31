@@ -17,6 +17,33 @@ Please note, I'm not the creator of starnet++ for support go to [the Starnet++ w
 
 Docker allows you to use Starnet++ without installing it. All the files and dependencies you need are already in the container and will not require installation.
 
+## How to use
+
+First create 2 folders:
+
+- **input**: an "input" folder in which you have the `.tif` files you wish to use.
+- **output**: an "output" folder which the processed `.tif` files will be output.
+
+After creating the folders, you can use this image using Docker run.
+
+### docker run
+
+```bash
+docker run \
+    -v /path/to/input:/home/starnet/application/input \
+    -v /path/to/output:/home/starnet/application/output \
+    -e PARALLEL=false \
+    -e STRIDE=128 \
+    thijsvanloef/starnet-docker:latest
+```
+
+### Environment variables
+
+| Option      | Description | Default Value |
+| ----------- | ----------- | ----------- |
+| PARALLEL      | Run the processing in parallel or not. It will run sequentially by default.       | false       |
+| STRIDE   | The stride setting controls how it computes the starless image. It computes a single block of pixels at a time and then repeats until it has finished the image. With a large setting, it works on fewer larger blocks of pixels. In a smaller setting, it works on more blocks of fewer pixels. A large setting can produce blocky results on large stars. On the other hand, a small setting will take WAY more computer time, so it is a tradeoff.       | 128        |
+
 ## Batch processing
 
 This Docker container also allows batch processing of images, meaning if you put multiple files in the input folder, it will sequentially process your .TIFF files.
@@ -68,30 +95,3 @@ Results:
 - Total processing time: 130 - 140 seconds
 - CPU: no CPU fluctuations
 - CPU LOAD: 100%
-
-## How to use
-
-First create 2 folders:
-
-- **input**: an "input" folder in which you have the `.tif` files you wish to use.
-- **output**: an "output" folder which the processed `.tif` files will be output.
-
-After creating the folders, you can use this image using Docker run.
-
-### docker run
-
-```bash
-docker run \
-    -v /path/to/input:/home/starnet/application/input \
-    -v /path/to/output:/home/starnet/application/output \
-    -e PARALLEL=false \
-    -e STRIDE=128 \
-    thijsvanloef/starnet-docker:latest
-```
-
-### Environment variables
-
-| Option      | Description | Default Value |
-| ----------- | ----------- | ----------- |
-| PARALLEL      | Run the processing in parallel or not. It will run sequentially by default.       | false       |
-| STRIDE   | The stride setting controls how it computes the starless image. It computes a single block of pixels at a time and then repeats until it has finished the image. With a large setting, it works on fewer larger blocks of pixels. In a smaller setting, it works on more blocks of fewer pixels. A large setting can produce blocky results on large stars. On the other hand, a small setting will take WAY more computer time, so it is a tradeoff.       | 128        |
