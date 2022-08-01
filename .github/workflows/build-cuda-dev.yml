@@ -1,4 +1,4 @@
-name: Docker-Image-Dev
+name: Docker-Image-Cuda-Dev
 on: 
   push:
     branches: [ main ]
