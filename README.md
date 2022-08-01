@@ -19,19 +19,35 @@ Docker allows you to use Starnet++ without installing it. All the files and depe
 
 ## How to use
 
+
+
 First create 2 folders:
 
 - **input**: an "input" folder in which you have the `.tif` files you wish to use.
 - **output**: an "output" folder which the processed `.tif` files will be output.
 
-After creating the folders, you can use this image using Docker run.
+### CPU Processing
 
-### docker run
+After creating the folders, you can use this image using Docker run.
 
 ```bash
 docker run \
     -v /path/to/input:/home/starnet/application/input \
     -v /path/to/output:/home/starnet/application/output \
+    -e PARALLEL=false \
+    -e STRIDE=128 \
+    thijsvanloef/starnet-docker:latest
+```
+
+### GPU Processing
+
+After creating the folders, you can use this image using Docker run.
+
+```bash
+docker run \
+    -v /path/to/input:/starnet/input \
+    -v /path/to/output:/starnet/output \
+    --gpus=all
     -e PARALLEL=false \
     -e STRIDE=128 \
     thijsvanloef/starnet-docker:latest
