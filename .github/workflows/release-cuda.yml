@@ -24,10 +24,10 @@ jobs:
             ${{ github.repository }}
           # generate Docker tags based on the following events/attributes
           tags: |
-            type=semver,pattern=v{{version}},prefix=cuda-
-            type=semver,pattern=v{{major}}.{{minor}},prefix=cuda-
-            type=semver,pattern=v{{major}},prefix=cuda-
-            type=raw,value=cuda-latest
+            type=semver,pattern=v{{version}},suffix=-cuda
+            type=semver,pattern=v{{major}}.{{minor}},suffix=-cuda
+            type=semver,pattern=v{{major}},suffix=-cuda
+            type=raw,value=latest-cuda
 
       - name: Build and push to DockerHub & GitHub Packages
         id: docker_build
