@@ -5,11 +5,11 @@
 ![Docker Stars](https://img.shields.io/docker/stars/thijsvanloef/starnet-docker)
 ![Image Size](https://img.shields.io/docker/image-size/thijsvanloef/starnet-docker/latest)
 
-[View on Docker Hub](https://hub.docker.com/repository/docker/thijsvanloef/starnet-docker)
+:whale:[View on Docker Hub](https://hub.docker.com/repository/docker/thijsvanloef/starnet-docker)
 
-[View the Wiki for more information](https://github.com/thijsvanloef/starnet-docker/wiki) :books:
+:books:[View the Wiki for more information](https://github.com/thijsvanloef/starnet-docker/wiki)
 
-A containerized variant of the [Starnet++](https://www.starnetastro.com/) application.
+:stars: [Starnet++ website](https://www.starnetastro.com/)
 
 I've made this image to be able to use Starnet++ quickly without needing to install the application locally.
 
