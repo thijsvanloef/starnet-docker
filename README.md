@@ -7,6 +7,8 @@
 
 [View on Docker Hub](https://hub.docker.com/repository/docker/thijsvanloef/starnet-docker)
 
+[View the Wiki for more information](https://github.com/thijsvanloef/starnet-docker/wiki) :books:
+
 A containerized variant of the [Starnet++](https://www.starnetastro.com/) application.
 
 I've made this image to be able to use Starnet++ quickly without needing to install the application locally.
