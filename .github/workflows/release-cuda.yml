@@ -27,9 +27,8 @@ jobs:
             type=semver,pattern=v{{version}},prefix=cuda-
             type=semver,pattern=v{{major}}.{{minor}},prefix=cuda-
             type=semver,pattern=v{{major}},prefix=cuda-
-          # always generate latest tag on push
-          flavor: |
-            latest=true
+            type=raw,value=cuda-latest
+
       - name: Build and push to DockerHub & GitHub Packages
         id: docker_build
         uses: docker/build-push-action@v2
