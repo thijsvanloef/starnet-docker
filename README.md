@@ -4,6 +4,7 @@
 ![Docker Pulls](https://img.shields.io/docker/pulls/thijsvanloef/starnet-docker)
 ![Docker Stars](https://img.shields.io/docker/stars/thijsvanloef/starnet-docker)
 ![Image Size](https://img.shields.io/docker/image-size/thijsvanloef/starnet-docker/latest)
+![Docker Image Size (tag)](https://img.shields.io/docker/image-size/thijsvanloef/starnet-docker/latest-cuda?label=image%20size%20cuda)
 
 :whale:[View on Docker Hub](https://hub.docker.com/repository/docker/thijsvanloef/starnet-docker)
 
