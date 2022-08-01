@@ -28,6 +28,7 @@ jobs:
             type=semver,pattern=v{{major}}.{{minor}},suffix=-cuda
             type=semver,pattern=v{{major}},suffix=-cuda
             type=raw,value=latest-cuda
+            type=raw,value=latest,enable=false
 
       - name: Build and push to DockerHub & GitHub Packages
         id: docker_build
