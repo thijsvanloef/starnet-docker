@@ -1,5 +1,6 @@
 name: Snyk
 on:
+  workflow_dispatch:
   schedule:
     # Runs "every day at at 00:00."
     - cron: '0 0 * * *'
