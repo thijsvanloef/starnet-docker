@@ -18,7 +18,7 @@ ENV PARALLEL=false \
 
 WORKDIR /starnet
 RUN wget -q "https://www.starnetastro.com/wp-content/uploads/2022/03/StarNetv2CLI_linux.zip" -O starnet.zip && unzip -j -q starnet.zip -d /starnet/application  && chmod +x /starnet/application/starnet++ && rm starnet.zip
-COPY scripts/* .
+COPY scripts/* ./
 RUN rm /starnet/application/libtensorflow*
 RUN mkdir /starnet/input /starnet/output 
 
